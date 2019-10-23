@@ -19,8 +19,9 @@ export class DrawBinaryTreeComponent implements OnInit {
   }
 
   ngOnInit() {
-    let treeData = [{"name": 2, "children":[{}, {"name": 3, "children":[]}]}];
-    // treeData = [{"name": 1, "children":[{"name": 2, "children":[]}, {}]}];
+    let treeData = [{ "name": "1", "children": [{}, { "name": "2", "children": [{}, { "name": "3", "children": [{ "name": "4", "children": [{ "name": "6", "children": [{ "name": "10", "children": [] }, {}] }, { "name": "7", "children": [{ "name": "11", "children": [] }, {}] }] }, { "name": "5", "children": [{}, { "name": "9", "children":[] }] }] }] }] }];
+    treeData = [{"name": 2, "children":[{}, {"name": 3, "children":[]}]}];
+    // treeData = [{"name": 3, "children":[{"name": 2, "children":[]}, {}]}];
     this.drawTree(treeData[0]);
   }
 
