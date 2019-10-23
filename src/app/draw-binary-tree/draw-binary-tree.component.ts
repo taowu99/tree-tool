@@ -47,7 +47,7 @@ export class DrawBinaryTreeComponent implements OnInit {
                 .data(nodes.descendants())
                 .enter()
                 .append("g")
-                .attr("transfrom", d => "translate(" + d.x + "," + d.y + ")");
+                .attr("transform", d => "translate(" + d.x + "," + d.y + ")");
 
     node.append("circle")
         .attr("class", d => d.data.name ? "treecircle" : "treenocircle");
