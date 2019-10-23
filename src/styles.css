@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+.treecircle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3pm;
+    r: 10;
+}
+
+.treenocircle {
+    fill: #fff;
+    stroke-width: 0px;
+    r: 0;
+}
+
+.treetext {
+    font: 12pm sans-serif;
+    color: red;
+    text-anchor: middle;
+}
+
+.treelink {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
+
+.treenolink {
+    fill: none;
+    stroke: #fff;
+    stroke-width: 0px;
+}
