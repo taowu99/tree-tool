@@ -20,21 +20,21 @@ export class DrawBinaryTreeComponent implements OnInit {
 
   ngOnInit() {
     let treeData = [{ "name": "1", "children": [{}, { "name": "2", "children": [{}, { "name": "3", "children": [{ "name": "4", "children": [{ "name": "6", "children": [{ "name": "10", "children": [] }, {}] }, { "name": "7", "children": [{ "name": "11", "children": [] }, {}] }] }, { "name": "5", "children": [{}, { "name": "9", "children":[] }] }] }] }] }];
-    treeData = [{"name": 2, "children":[{}, {"name": 3, "children":[]}]}];
-    // treeData = [{"name": 3, "children":[{"name": 2, "children":[]}, {}]}];
+    // treeData = [{"name": "2", "children":[{}, {"name": "3", "children":[]}]}];
+    // treeData = [{"name": "3", "children":[{"name": "2", "children":[]}, {}]}];
     this.drawTree(treeData[0]);
   }
 
   drawTree(rootnode) {
     const g = d3.select('svg')
-      .attr("width", this.width + this.margin.left + this.margin.right)
-      .attr("height", this.height + this.margin.top + this.margin.bottom)
-      .append('g')
-      .attr('transform', 'translate(' + this.margin.left + "," + this.margin.top +")");
+                .attr("width", this.width + this.margin.left + this.margin.right)
+                .attr("height", this.height + this.margin.top + this.margin.bottom)
+                .append('g')
+                .attr('transform', 'translate(' + this.margin.left + "," + this.margin.top +")");
 
     const treemap = d3.tree().size([this.width, this.height]);
     const nodes = treemap(d3.hierarchy(rootnode));
-    let link = g.selectAll(".link")
+    const link = g.selectAll(".link")
                 .data(nodes.descendants().slice(1))
                 .enter()
                 .append("path")
@@ -44,7 +44,7 @@ export class DrawBinaryTreeComponent implements OnInit {
                                 + " " + d.parent.x + "," + (d.y + d.parent.y) / 2
                                 + " " + d.parent.x + "," + d.parent.y);
 
-    let node = g.selectAll(".node")
+    const node = g.selectAll(".node")
                 .data(nodes.descendants())
                 .enter()
                 .append("g")
@@ -57,6 +57,6 @@ export class DrawBinaryTreeComponent implements OnInit {
         .attr("class", "treetext")
         .attr("dy", ".35em")
         .style("text-anchor", "middle")
-        .text( d => d.data.name);
+        .text(d => d.data.name);
   }
 }

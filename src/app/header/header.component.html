@@ -1,28 +1,41 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Tree Tool</a>
-    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" routerLink='/home'  routerLinkActive="active">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="#" class="navbar-brand">Tree Tool</a>
+        </div>
+    
+        <div class="collapse navbar-collapse">    
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" routerLink='/home'  routerLinkActive="active">
                         <i class="fa fa-home"><span class="badge badge-info">*</span></i>
-                    Home
-                    <span class="sr-only">(current)</span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a  class="nav-link" routerLink="/draw-binary-tree">
-                    <i class="fa fa-envelope-o"><span class="badge badge-danger">1</span></i>
-                    Draw Binary Tree
-                </a>
-            </li>
-        </ul>
-        <form class="form-inline ml-auto">
-            <input type="text" class="form-control mr-sm-2" placeholder="Search">
-            <button type="submit" class="btn btn-outline-light">Search</button>
-        </form>
+                        Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a  class="nav-link" routerLink="/draw-binary-tree">
+                        <i class="fa fa-envelope-o"><span class="badge badge-danger">1</span></i>
+                        Draw Binary Tree
+                    </a>
+                </li>
+            </ul>
+                
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" appDropdown>
+                    <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">To Shopping List</a></li>
+                        <li><a href="#">Edit Recipe</a></li>
+                        <li><a href="#">Delete Recipe</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <form class="form-inline ml-auto">
+                <input type="text" class="form-control mr-sm-2" placeholder="Search">
+                <button type="submit" class="btn btn-outline-light">Search</button>
+            </form>
+        </div>
     </div>
 </nav>
