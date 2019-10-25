@@ -1,4 +1,11 @@
-<div>
-    <p>Draw Tree</p>
-    <svg></svg>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-ms-12">
+            <p>{{ title }}</p>
+            <textarea name="jsontree" cols="120" rows="2" [(ngModel)]="jsontree" (blur)="onChangeData()"></textarea>
+        </div>
+        <div class="col-ms-12">
+            <svg></svg>
+        </div>
+    </div>
 </div>
