@@ -9,6 +9,7 @@ import { dashCaseToCamelCase } from '@angular/compiler/src/util';
   styleUrls: ['./draw-binary-tree.component.css']
 })
 export class DrawBinaryTreeComponent implements OnInit {
+  jsontree;
   private margin = {top: 20, right: 20, bottom: 20, left: 20};
   private width: number;
   private height: number;
@@ -22,9 +23,14 @@ export class DrawBinaryTreeComponent implements OnInit {
     let treeData = [{ "name": "1", "children": [{}, { "name": "2", "children": [{}, { "name": "3", "children": [{ "name": "4", "children": [{ "name": "6", "children": [{ "name": "10", "children": [] }, {}] }, { "name": "7", "children": [{ "name": "11", "children": [] }, {}] }] }, { "name": "5", "children": [{}, { "name": "9", "children":[] }] }] }] }] }];
     // treeData = [{"name": "2", "children":[{}, {"name": "3", "children":[]}]}];
     // treeData = [{"name": "3", "children":[{"name": "2", "children":[]}, {}]}];
-    this.drawTree(treeData[0]);
+    this.jsontree = JSON.stringify(treeData[0]);
+    this.onChangeData();
   }
 
+  onChangeData() {
+    this.updateTree(JSON.parse(this.jsontree));
+  }
+  
   drawTree(rootnode) {
     const g = d3.select('svg')
                 .attr("width", this.width + this.margin.left + this.margin.right)
